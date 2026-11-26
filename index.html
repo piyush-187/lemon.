@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lemon. | Campus Culinary Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand" id="brandHomeBtn">
+        <span class="brand-logo">lemon.</span>
+        <span class="brand-sub">Campus Dining Guide</span>
+      </a>
+
+      <div class="controls-bar">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input type="text" id="searchInput" placeholder="Search outlets or any dish across campus..." />
+        </div>
+
+        <div class="filter-group" role="group" aria-label="Dietary Filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="veg">● Veg</button>
+          <button class="filter-btn" data-filter="egg">● Egg</button>
+          <button class="filter-btn" data-filter="nonveg">● Non-Veg</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="heroSection">
+    <div>
+      <h1>Every Campus Craving, <span>Curated.</span></h1>
+      <p>Select any outlet below to explore its complete menu, portion tiers, and pricing.</p>
+    </div>
+    <div class="stats-pill">
+      <div class="stat-item">
+        <strong id="outletCount">18</strong>
+        <span>Outlets</span>
+      </div>
+      <div class="stat-item">
+        <strong id="dishCount">0</strong>
+        <span>Total Dishes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW 1: Outlets Directory Grid -->
+  <main id="outletsDirectoryView">
+    <div class="outlets-grid" id="outletsGrid"></div>
+  </main>
+
+  <!-- VIEW 2: Single Outlet Menu View (Hidden initially) -->
+  <main id="singleOutletView" class="hidden">
+    <div class="menu-top-bar">
+      <button class="back-btn" id="backToOutletsBtn">← Back to All Outlets</button>
+      <div class="quick-switcher" id="quickSwitcher"></div>
+    </div>
+    <div id="activeOutletContainer"></div>
+  </main>
+
+  <!-- Floating Meal Planner Button -->
+  <button class="tray-fab" id="openTrayBtn">
+    <span>✦ Meal Planner</span>
+    <span id="trayBadge">(0)</span>
+  </button>
+
+  <!-- Meal Planner Drawer -->
+  <aside class="tray-drawer" id="trayDrawer">
+    <div class="tray-header">
+      <h3>Your Craving List</h3>
+      <button class="close-tray" id="closeTrayBtn">✕</button>
+    </div>
+    <div class="tray-items" id="trayItems"></div>
+    <div class="tray-footer">
+      <div class="tray-total">
+        <span>Estimated Total</span>
+        <span id="trayTotal">₹0</span>
+      </div>
+      <button class="clear-btn" id="clearTrayBtn">Clear List</button>
+    </div>
+  </aside>
+
+  <footer>
+    <span>lemon.</span> — Complete Campus Culinary Directory • Prices in INR (₹)
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
